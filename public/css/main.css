@@ -1,0 +1,36 @@
+.btn {
+    display : inline-block ;
+   padding : 5 px  12 px ;
+   border-radius : 4 px ;
+   font-size : 13 px  ! important ;
+   margin : 0 px  7 px ;
+   цвет : # 777 ;
+   border : 1 px  solid  # c5c5c5 ;
+   box-shadow : 1 px  1 px  0 px #fff ;
+   background-color : # F7F7F7 ;
+}
+
+.btn : hover {
+    text-decoration : none ;
+   курсор : указатель ;
+   border : 1 px  solid  #bbb ;
+   background-color : #eee ;
+   цвет : # 333 ;
+}
+
+.btn : active {
+    background-color : #ccc ;
+   схема : нет ;
+}
+
+.btn-blue {
+    background-color : # EDF2F8 ;
+}
+
+.btn-blue : hover {
+    background-color : # E2EBF6 ;
+}
+
+.btn-blue : active {
+    background-color : #ccc ;
+}

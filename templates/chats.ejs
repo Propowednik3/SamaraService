@@ -1,0 +1,90 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/styles.css">
+
+    <title>ПК МУФ СО "Документация"</title>
+  </head>
+  <body>
+      <!-- Тело заголовка -->
+    <%-partial('partials/head')%>
+    
+<!-- Основная зона -->
+      <div class="row" style="height: 800px">
+        <!-- Навигатор -->
+        <div class="col-xl-2 navigator-body">
+            <%-partial('partials/navigator')%>
+               
+        </div>
+                
+        <!-- Рабочая зона -->
+        <div class="col-xl-10">
+          <!-- Заголовок рабочей зоны -->
+          <div class="row" style="height: 30px">
+              <div class="col-xl">Рабочая зона</div>
+            </div>
+          <!-- Тело рабочей зоны -->
+          <div class="row">              
+              <div class="col-xl-9">
+                 <!-- Заголовок 1 части -->
+                  <div class="row" style="height: 30px">
+                    <div class="col-xl-9">
+                        <select disabled id="SelChatID" style="width: 100%">                           
+                        </select>                                                        
+                    </div>
+                    <div class="col-xl-3">
+                        <select disabled  id="SelChatDate" style="width: 100%">
+                            <option selected value="current">Текущая</option>
+                        </select>                                                        
+                    </div>
+                  </div>                  
+                  <!-- Тело 1 части --> 
+                  <div class="row" style="height: 550px;">
+                      <div id="messbody" class="col-xl" style="font-size:9.0pt; overflow: auto;">
+                            <ul id="messlist" class="list-group">                                   
+                            </ul>
+                       </div>
+                  </div> 
+                  <!-- Подол 1 части -->
+                  <div class="row" style="height: 200px;">
+                      <div class="col-xl" style="font-size:9.0pt; overflow: auto;">
+                            <input disabled  id="messbox" class="form-control" autocomplete="off" autofocus placeholder="Сообщение...">
+                      </div>
+                  </div>                   
+              </div>
+
+              <!-- Заголовок 2 части -->
+              <div class="col-xl-3">
+                  <!-- Заголовок 2 части -->
+                   <div class="row" style="height: 30px">
+                       <div class="col-xl">Список подключенных</div>
+                   </div>
+                   <!-- Тело 2 части -->  
+                   <div class="row" style="height: 750px">
+                       <div class="col-xl" style="font-size:9.0pt; overflow: auto;">
+                            <ul id="connlist">
+                            </ul>
+                       </div>
+                   </div>
+               </div>
+            </div>   
+        </div>
+      </div>
+
+      <!-- Дно -->
+      <%-partial('partials/footer')%>
+      
+    </div>
+
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="public/js/chat.js"></script>
+  </body>
+</html>

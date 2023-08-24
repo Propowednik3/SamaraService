@@ -1,0 +1,188 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <title>ПК МУФ СО</title>
+    <link rel='stylesheet prefetch' href='public/css/work.css'> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>-->
+
+    <script language="javascript" src="public/js/autosize.js"></script>
+	<link rel='stylesheet prefetch' href='public/css/icons.css'>
+    <link rel='stylesheet prefetch' href='public/css/grids.css'> 
+    <script src="public/js/grids.js"></script>
+  <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>    
+      <script type="text/javascript" src="public/js/w2ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="public/css/w2ui.css" /> 
+    
+  <script src="/socket.io/socket.io.js"></script>
+    <script src="public/js/main.js"></script>
+    <script src="public/js/sockets.js"></script>
+    <link rel='stylesheet prefetch' href='public/css/reset.min.css'>
+    <link rel='stylesheet prefetch' href='public/css/chats.css'>
+    <link rel='stylesheet prefetch' href='public/css/icons.css'>  
+    <link rel='stylesheet prefetch' href='public/css/main.css'>   -->
+           
+    
+    <script language="javascript" src="public/js/cadesplugin_api.js"></script>     
+  </head>
+  <body>
+
+    <div class="bodybox">
+        <!-- HEADER>>>>> -->
+        <div class="topbox"> 
+            <div class="headbox">
+                <div class="headinnerbox">
+                    <div class="logo">МУФ СО "Сопровождение и Аудит"</div>
+                </div>
+                <p>eeee</p>
+            </div>
+        </div>
+        
+        <!-- <<<<<HEADER-->
+        <div class="mainbox"> 
+            <div class="menubox">
+                <div class="menuinnerbox">
+                    <p>eeee</p>
+                    <p>eeee</p>
+                </div>
+            </div>
+            <div class="workbox">
+                <div class="workinnerbox">
+                        <div id="captiongrid"></div>
+                        <script type="text/javascript">azCreateTable('captiongrid', 'captiontable', { Width: 600, Height: 400 });</script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="surface" style="font-family: Segoe UI, Tahoma, Arial; width: 100%; height: 900px;"></div>    
+     
+    <script type="text/javascript">
+      $(function () 
+        {            
+            var pstyle = 'border: 1px solid #dfdfdf; padding: 5px;';
+            $('#surface').w2layout({
+                name: 'surface',
+                panels: [
+                            { type: 'top', size: headHeight, style: 'background-color: white;', overflow: 'hidden' },
+                            { type: 'left', size: sideBarwidth, style: pstyle},
+                            { type: 'main', style: pstyle, content: '' },
+                            { type: 'right', size: '50%', resizable: true, style: pstyle},
+                            { type: 'preview', size: '40%', resizable: true, style: pstyle},
+                            { type: 'bottom', size: bottomHeight, style: pstyle}
+                        ]
+            });
+            //var pstyle = 'background-color: #F0F0C1; border: 1px solid #dfdfdf; padding: 5px;';
+            $().w2layout({
+                name: 'surface2',
+                panels: [
+                    { type: 'top', size: 40, style: pstyle },
+                    { type: 'main', style: pstyle }
+                ]
+            }); 
+            $().w2layout({
+                            name: 'historylayout',
+                            panels: [
+                                { type: 'top', size: '30px'},
+                                { type: 'main', size: '100%', minSize: 300 }
+                                ]
+                        });
+            
+             $().w2toolbar({
+                                    name: 'histtoolbar',
+                                    items: [
+                                        { type: 'button', id: 'htsgn', text: '', tooltip: 'Проверить подпись', icon: 'icon-sign', disabled: false }
+                                    ],
+                                    onClick: function(event)
+                                    {
+                                        if ((event.type != "click") || (event.target != "htsgn")) return;
+                                        var selected_ids = w2ui['historygrid'].getSelection();
+                                        var jumps = w2ui['historygrid'].jumps;
+                                        var jumps_inx = w2ui['historygrid'].jumps_inx;
+                                        
+                                        function verify_done(result)
+                                        {
+                                            var result_message = "";
+                                            if (result.valid) 
+                                            {
+                                                result_message += "Подпись верна; ";
+                                                result_message += result.subject.fullname;
+                                            } 
+                                            else 
+                                            {
+                                                result_message += "Подпись ошибочная; ";
+                                                result_message += result.message;
+                                            }
+                                            w2ui['historygrid'].set(result.recid, { signature : result_message });
+                                        }
+                                        //if (!selected_ids.length) ShowMessage("Необходимо выделить хотябы одну запись !!!");
+                                        for (var i = 0; i < selected_ids.length; i++)
+                                        {
+                                            var n = jumps_inx[selected_ids[i]];
+                                            if (!!jumps[n].signature[0]) 
+                                            {
+                                                w2ui['historygrid'].set(selected_ids[i], { signature : "????????" });
+                                                console.log(jumps[n].signature[0].signature);
+                                                SignVerify(w2ui['historygrid'].datatype, selected_ids[i], jumps[n].signature[0].signature, verify_done, verify_done);                                               
+                                            }
+                                        }
+                                    }
+                                });
+
+            w2ui['historylayout'].content('top', w2ui['histtoolbar']);
+            
+            w2ui['surface'].content('top', w2ui['surface2']);
+            w2ui['surface2'].html('top', '<div style="text-align: center; font-weight:bold; font-size:15.0pt; color: #f85c37">ПК МУФ СО</div>');
+            w2ui['surface2'].html('main', '<div style="text-align: right; font-style:italic; font-weight:bold; font-size:9.0pt; color: #f85c37">\
+                                      <a href="/logout">Выход:</a>\
+                                      <%= user.firstname + " " + user.middlename + " " + user.lastname  %>\
+                                      </div>');
+            w2ui['surface'].html('left',  '<div id="sidebar" style="height: '+(bodyHeight-20)+'px; width: '+(sideBarwidth-10)+'px;"></div>');
+            w2ui['surface'].user = {};
+            w2ui['surface'].user.serial = '<%= user.certificate %>';
+
+            $('#sidebar').w2sidebar({
+                  name: 'sidebar',
+                  nodes: [
+                            <% for (var i = 0; i < workplaces.length; i++) { %>
+                              { id: '<%= workplaces[i].codename %>', text: '<%= workplaces[i].name %>', img: 'icon-folder'},
+                            <% } %>
+                        ]
+                      
+                });            
+            w2ui.sidebar.on('click', workplaceClick);
+
+            $().w2grid({ 
+                        name: 'historygrid',
+                        columns: [
+                            { field: 'statefromname', caption: 'Начальное состояние', size: '200px'},
+                            { field: 'statetoname', caption: 'Конечное состояние', size: '200px'},
+                            { field: 'canceled', caption: 'Отменен', size: '80px'},
+                            { field: 'back', caption: 'Откат', size: '80px'},
+                            { field: 'signature', caption: 'Подпись', size: '200px' },
+                            { field: 'datetime', caption: 'Дата', size: '120px'},
+                            { field: 'creatorname', caption: 'Автор', size: '120px'}
+                        ],
+                        onClick: function(event) 
+                        {
+                            var grid = this;
+                            event.onComplete = function () 
+                            {
+                                //console.log('onComplete');
+                            }
+                        }
+                    });
+        });
+    
+    </script>
+   
+
+    
+  </body>
+</html>

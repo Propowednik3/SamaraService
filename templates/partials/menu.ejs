@@ -1,0 +1,43 @@
+<div class="row">
+    <ul>
+        <% for (var i = 0; i < workplaces.length; i++) { %>
+          <li><a href="#" title="<%= workplaces[i].note %>"><%= workplaces[i].name %></a></li>
+          <% if (workplaces[i].type == 0) { for (var n = 0; n < chats.length; n++) { %>
+            <ul>
+                <li><a href="/chats?id=<%= chats[n]._id %>" title="<%= workplaces[i].note %>"><%= chats[n].name %></a></li>
+            </ul>
+            <% }} %>
+        <% } %>
+    </ul>  
+  </div>   
+
+<tr style="height:100%">
+  <td>
+    <div style="width: 100%; height: 100%; overflow: hidden; position: relative;">
+      <div style="position:absolute; width: 100%; height: 100%">
+        <ul class="dynatree-container32">
+          <% for (var i = 0; i < workplaces.length; i++) { %>
+          <li class="">
+            <span class="dynatree-node dynatree-folder dynatree-has-children dynatree-exp-c dynatree-ico-cf">
+              <span class="dynatree-expander"></span>
+              <img src="public/img/adm_commondict.png" alt="">
+              <a class="dynatree-title32" title="<%= workplaces[i].note %>"><%= workplaces[i].name %></a>
+            </span>
+          </li>
+          <% if (workplaces[i].type == 0) { for (var n = 0; n < chats.length; n++) { %>
+            <ul style="">
+              <li class="">
+                <span class="dynatree-node dynatree-exp-c dynatree-ico-c">
+                  <span class="dynatree-connector"></span>
+                  <img src="public/img/file.png" alt="">
+                  <a href="/chats?id=<%= chats[n]._id %>" class="dynatree-title32" title="<%= chats[n].note %>"><%= chats[n].name %></a>
+                </span>
+              </li>
+            </ul>
+            <% }} %>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+  </td>
+</tr>

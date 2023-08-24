@@ -1,0 +1,41 @@
+{
+  "env" : "development",
+  "enabledLoginManual": true,
+  "enabledLoginCrypto": true,
+  "enabledResetPassword": true,
+  "enabledSignUpManual": true,
+  "enabledSignUpCrypto": true,
+  "pass_reset_interval": 300000,
+  "pass_confirm_interval": 300000,
+  "pass_signup_interval": 300000,
+  "captcha_max_count": 1000,
+  "port" : 8888,
+  "ex_port" : 8888,
+  "ex_hostname" : "localhost",
+  "all_group":"5bbee49d18978b1fa0cd0b1c",
+  "manualpath" : "\\\\192.168.0.6\\General",
+  "mongodb" : 
+          {
+            "url" : "mongodb://localhost/",
+            "database" : "min"
+          },
+  "session": 
+          {
+            "secret": "KillerIsJim",
+            "key": "sid",
+            "cookie": 
+            {
+              "path": "/",
+              "httpOnly": true,
+              "maxAge": null
+            }
+          },
+  "mailer":
+        {
+          "login": "",
+          "password": "",
+          "server": "smtp://192.168.0.0",
+          "from_address": "",
+          "auth": "NTLM"
+        }
+}

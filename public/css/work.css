@@ -1,0 +1,130 @@
+@font-face 
+{
+    font-family: "Magistral";
+    src: url("/public/fonts/magistral.otf") format("opentype");
+}
+
+html
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size: 10pt;
+}
+    
+body 
+{
+    background: #47879d url(../img/background.jpg) no-repeat;
+    background-size: 100%;
+}
+
+.logo
+{
+    font-family: Magistral, Verdana, Arial, Helvetica, sans-serif; 
+    font-size: 32pt;
+    font-weight: bold;
+    background: linear-gradient(rgb(0, 0, 0), rgb(200, 200, 200), rgb(0, 0, 0));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+div.bodybox
+{
+    position: absolute;
+    width: 80%;
+    height: 0px;
+    left: 10%;   
+    display: table; 
+}
+
+div.topbox
+{   
+}
+
+div.headbox
+{  
+    margin: 3px;
+    background: rgba(61, 58, 75, 0.7);    
+    border: 1px;
+    border-radius: 8px;
+    border-style: solid; 
+    border-color: #767c7e;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+}
+
+div.headinnerbox
+{  
+    margin: 6px;
+    background: rgba(61, 58, 75, 0.7);    
+    border: 1px;
+    border-radius: 6px;
+    border-style: solid; 
+    border-color: #4b5052;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+}
+
+div.mainbox
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+div.menubox
+{
+    width: 10%;
+    height: 700px;
+    min-height: 500px;
+    margin: 3px;
+    background: rgba(61, 58, 75, 0.7);    
+    border: 1px;
+    border-radius: 8px;
+    border-style: solid; 
+    border-color: #767c7e;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+}
+
+div.menuinnerbox
+{
+    height: 686px;
+    min-height: 486px;
+    margin: 6px;
+    background: rgba(61, 58, 75, 0.7);    
+    border: 1px;
+    opacity: 1.0;
+    border-radius: 6px;
+    border-style: solid; 
+    border-color: #4b5052;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+}
+
+div.workbox
+{
+    width: 90%;
+    height: 700px;
+    min-height: 500px;
+    margin: 3px;
+    background: rgba(61, 58, 75, 0.7);    
+    border: 1px;
+    border-radius: 8px;
+    border-style: solid; 
+    border-color: #767c7e;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+}
+
+div.workinnerbox
+{
+    height: 686px;
+    min-height: 486px;
+    margin: 6px;
+    background: rgba(61, 58, 75, 0.7);    
+    border: 1px;
+    opacity: 1.0;
+    border-radius: 6px;
+    border-style: solid; 
+    border-color: #4b5052;
+    box-shadow: 0 0 10px rgba(0,0,0,1);
+}
+
+div.dark
+{
+    background: #122127;
+}

@@ -1,0 +1,140 @@
+
+.icon-accept
+{
+    content: '';
+    background:url('../img/accept.png');
+    background-size:cover;
+    position:absolute;
+    width:15px;
+    height:15px;    
+    margin-left: 4px;
+    margin-top: -1px;
+}
+.icon-minus
+{
+    content: '';
+    background:url('../img/minus.png');
+    background-size:cover;
+    position:absolute;
+    width:15px;
+    height:15px;    
+    margin-left: 4px;
+    margin-top: -1px;
+}
+.icon-plus
+{
+    content: '';
+    background:url('../img/plus.png');
+    background-size:cover;
+    position:absolute;
+    width:15px;
+    height:15px;    
+    margin-left: 4px;
+    margin-top: -1px;
+}
+.icon-files
+{
+    content: '';
+    background:url('../img/files2.png');
+    background-size:cover;
+    position:absolute;
+    width:20px;
+    height:20px;    
+    margin-left: 2px;
+    margin-top: -3px;
+}
+.icon-detail
+{
+    content: '';
+    background:url('../img/detail.png');
+    background-size:cover;
+    position:absolute;
+    width:20px;
+    height:20px;    
+    margin-left: 2px;
+    margin-top: -3px;
+}
+.icon-refresh
+{
+    content: '';
+    background:url('../img/refresh.png');
+    background-size:cover;
+    position:absolute;
+    width:20px;
+    height:20px;    
+    margin-left: 2px;
+    margin-top: -3px;
+}
+.icon-collumns
+{
+    content: '';
+    background:url('../img/collumns.png');
+    background-size:cover;
+    position:absolute;
+    width:20px;
+    height:20px;    
+    margin-left: 2px;
+    margin-top: -3px;
+}
+.icon-preview
+{
+    content: '';
+    background:url('../img/preview.png');
+    background-size:cover;
+    position:absolute;
+    width:20px;
+    height:20px;    
+    margin-left: 2px;
+    margin-top: -3px;
+}
+.icon-download
+{
+    content: '';
+    background:url('../img/download.png');
+    background-size:cover;
+    position:absolute;
+    width:20px;
+    height:20px;    
+    margin-left: 2px;
+    margin-top: -3px;
+}
+.icon-undo
+{
+    content: '';
+    background:url('../img/undo.png');
+    background-size:cover;
+    position:absolute;
+    width:20px;
+    height:20px;    
+    margin-left: 2px;
+    margin-top: -3px;
+}
+.icon-redo2
+{
+    content: '';
+    background:url('../img/redo.png');
+    background-size:cover;
+    position:absolute;
+    width:20px;
+    height:20px;    
+    margin-left: 2px;
+    margin-top: -3px;
+}
+.icon-sign
+{
+    content: '';
+    background:url('../img/sign.png');
+    background-size:cover;
+    width:100%;
+    height:100%;
+}
+.icon-redo
+{
+    content: '';
+    background:url('../img/redo.png');
+    background-size:cover;
+    
+    width:100%;
+    height:100%;
+}
+

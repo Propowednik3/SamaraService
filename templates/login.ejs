@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Вход в систему МУФ СО</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="public/css/login.css" /> 
+</head>
+<body>
+
+    <div class="container">
+        <div class="flat-form">
+            <ul class="tabs">
+                <li>
+                    <a href="#loginman" class="active">Вход (логин/пароль)</a>
+                </li>
+                <li>
+                    <a href="#loginsign">Вход/Регистрация (ЭП)</a>
+                </li>
+                <li>
+                    <a href="#reset">Сбросить пароль</a>
+                </li>
+                <li>
+                    <a href="#signupman">Регистрация (логин/пароль)</a>
+                </li>
+            </ul>
+            <div id="loginman" class="form-action show">
+                <h1>Вход через логин и пароль</h1>
+                <h2 id=errorlabel1 style="color: #c1d134;"></h2>
+                <p>Введите логин и пароль</p>
+                <form id="login">
+                    <ul>
+                        <li><input id=logname name="username" type="text" placeholder="Логин" /></li>
+                        <li><input id=logpass name="password" type="password" placeholder="Пароль" /></li>  
+                        <input id=logcaptid name="captid" type="hidden" value="<%= id_code %>"/>
+                        <li><input id=logcaptval name="captval" type="text" placeholder="Проверочный код" /></li>
+                        <li><img src="data:image/jpeg;base64,<%= valicode %>"/></li>                     
+                        <li><input type="submit" value="Войти" class="button" /></li>
+                    </ul>
+                </form>
+            </div>
+            <div id="loginsign" class="form-action hide">
+                <h1>Вход</h1>
+                <h2 id=errorlabel2 style="color: #c1d134;"></h2>
+                <p>Выберите ЭП для входа</p>
+                <form id="logsignform">
+                    <ul>
+                        <li><select id=logsigns></select></li>
+                        <li><input type="submit" value="Войти" class="button"/></li>
+                    </ul>
+                </form>
+            </div>
+            <div id="reset" class="form-action hide">
+                <h1>Сбросить пароль</h1>
+                <h2 id=errorlabel3 style="color: #c1d134;"></h2>
+                <p>Введите Ваш Email и новый пароль</p>
+                <form id="logreset">
+                    <ul>
+                        <li><input id=resetmail name="email" type="text" placeholder="Email" /></li>
+                        <li><input id=resetpass name="resetpass" type="password" placeholder="Пароль" /></li>
+                        <input id=rescaptid name="captid" type="hidden" value="<%= id_code %>"/>
+                        <li><input id=rescaptval name="captval" type="text" placeholder="Проверочный код" /></li>
+                        <li><img src="data:image/jpeg;base64,<%= valicode %>"/></li>                     
+                        <li><input type="submit" value="Сбросить" class="button" />
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <div id="signupman" class="form-action hide">
+                <h1>Регистрация</h1>
+                <h2 id=errorlabel4 style="color: #c1d134;"></h2>
+                <p>Введите логин, пароль и email</p>
+                <form id="signup">
+                    <ul>
+                        <li><input id=newname name="username" type="text" placeholder="Логин" /></li>
+                        <li><input id=newpass name="password" type="password" placeholder="Пароль" /></li>
+                        <li><input id=newmail name="email" type="text" placeholder="Email" /></li>
+                        <input id=newcaptid name="captid" type="hidden" value="<%= id_code %>"/>
+                        <li><input id=newcaptval name="captval" type="text" placeholder="Проверочный код" /></li>
+                        <li><img src="data:image/jpeg;base64,<%= valicode %>"/></li>                     
+                        <li><input type="submit" value="Регистрация" class="button" /></li>
+                        </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script language="javascript" src="public/js/cadesplugin_api.js"></script>  
+    <script class="cssdeck" src="public/js/login.js"></script>
+</body>
+</html>
+
+

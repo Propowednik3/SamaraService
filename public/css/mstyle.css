@@ -1,0 +1,217 @@
+
+html, body
+{
+		margin:0;
+		padding:0;
+		width:100%;
+		height:100%;
+}
+
+table.mainpage-table
+{
+		border-collapse: collapse;
+		width: 100%;
+		height: 100%;
+}
+table.mainpage-table.third.left
+{
+		border-collapse: separate;
+		border-spacing: 5px 10px;
+		width: 33%;
+		float: left;
+		clear: left;
+}
+table.mainpage-table.two-third.right
+{
+		width: 66%;
+		float: right;
+		clear: right;
+}
+
+table.chatpage-table
+{
+		border-collapse: collapse;
+		width: 100%;
+		height: 100%;
+}
+table.chatpage-table.third
+{
+		border-collapse: separate;
+		border-spacing: 5px 10px;
+		width: 33%;
+		float: left;
+		clear: left;
+}
+table.chatpage-table.third.center
+{
+		float: center;
+		clear: center;
+}
+table.chatpage-table.third.right
+{
+		float: right;
+		clear: right;
+}
+
+
+.edit-chat-placeHolder {
+	position: relative;
+	overflow: hidden;
+
+	border: 1px outset;
+	margin: 0px;
+	padding: 0px;
+
+	width: 150px;
+	height: 19px;
+}
+
+.edit-chat-content {
+	border: 0px;
+
+	margin: 0px;
+	padding: 0px;
+
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+
+	position: absolute;
+}
+
+.edit-chat-input {
+	border: 0px;
+	width: 80%;
+	height: 100%;
+	padding: 0px 2px 0px 2px;
+	margin: 0px;
+	background: none;
+        position: absolute;
+}
+
+
+table.startpage-table
+{
+		border-collapse: collapse;
+		width: 100%;
+		height: 100%;
+}
+
+div.startpage-advertisement
+{
+		float: left;
+		clear: left;
+}
+
+div.startpage-contactinfo
+{
+		float: right;
+		clear: right;
+		padding-right: 10px;
+}
+
+table.startpage-table.half-width {
+		border-collapse: separate;
+		border-spacing: 5px 10px;
+		width: 50%;
+		float: left;
+		clear: left;
+	}
+	table.startpage-table.half-width.right {
+		float: right;
+		clear: right;
+	}
+	tr.startpage-title {
+		height: 1px;
+	}
+	td.startpage-td {
+		margin:0;
+		padding:0;
+	}
+	tr.startpage-statistic {
+		height: 25%;
+	}
+	tr.startpage-half-height {
+		height: 50%;
+	}
+	ul.startpage-scrolled {
+		position: absolute;
+		top: 25px;
+		bottom: 0px;
+		left: 5px;
+		right: 5px;
+		overflow-y: auto;
+	}
+	div.startpage-box {
+		position: relative;
+		background-color: #D0E0FF;
+		border-radius: 8px 8px 8px 8px;
+		box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5) inset, 0 1px 2px 1px rgba(0, 0, 0, 0.1);
+		font-size: 12px;
+		height: 100%;
+		overflow: hidden;
+	}
+	h4.box-caption {
+		border-color: #B0C0F0;
+		border-style: solid;
+		border-width: 0 0 2px;
+		margin: 0;
+		padding: 5px 2px;
+		text-align: center;
+		text-shadow: 0px 1px 1px white;
+	}
+	ul {
+		list-style-position: inside;
+		padding: 0px;
+	}
+	ul.startpage-reports {
+		list-style-image: url('resources/cons/file16.png');
+	}
+	ul.startpage-form-history {
+		list-style-image: url('resources/cons/file16.png');
+	}
+	div.news-body {
+		background-color: #E5EBFF;
+		border-radius: 8px 8px 8px 8px;
+		box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5), 0 1px 2px 1px rgba(0, 0, 0, 0.1) inset;
+		margin: 3px 3px 3px 20px;
+		padding: 2px 5px;
+		display: none;
+	}
+	div.news-body ol {
+		list-style-image: none;
+		list-style-position: outside;
+		padding-left: 25px;
+	}
+	div.news-body ul {
+		list-style-image: none;
+		list-style-position: outside;
+		list-style-type: square;
+		padding-left: 25px;
+	}
+	li {
+		padding: 2px 5px;
+	}
+	li.startpage-odd {
+		background-color: #C5D5F5;
+	}
+	h2.startpage-header {
+		margin:0;
+		padding:10px;
+		text-align: center;
+		text-shadow: 0px 1px 1px white;
+	}
+	div.startpage-canvas {
+		height: 150px;
+	}
+	.banner {
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		display: block;
+		border: 1px solid #556BB3;
+		margin: 5px 10px;
+	}
+	.banner:hover {
+		border: 1px solid #758BD3;
+	}

@@ -1,0 +1,14 @@
+<!-- Заголовок навигатора -->
+<div class="row" style="height: 30px">
+        <div class="col-xl">Навигатор</div>
+    </div>
+<!-- Тело навигатора -->   
+<div class="row">
+        <ul class="list-group" style="width: 100%">
+            <% for (var i = 0; i < workplaces.length; i++) { %>
+                <li>
+                  <a class="list-group-item list-group-item-info" href="<%= workplaces[i].url %>" title="<%= workplaces[i].note %>"><%= workplaces[i].name %></a>
+                </li>              
+            <% } %>
+        </ul>  
+      </div>
